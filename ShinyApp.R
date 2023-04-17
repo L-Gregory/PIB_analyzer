@@ -8,7 +8,7 @@ library(shinyjs)
 # library(tidyverse)
 # install.packages("vctrs")
 
-source("/Volumes/walker/General Project Storage/Luke_Gregory/2023_Experiments/MethodsChapter/scripts/User-Defined-Functions.R")
+source("User-Defined-Functions.R")
 
 ui <- fluidPage(
   #Add "flatly" theme from "shinythemes" package
@@ -95,7 +95,7 @@ server <- function(input, output, session) {
   data <- reactive({
     if (input$load_demo_oneBurst) {
       # Default data if check box load_demo is checked
-      data <- read.csv("/Volumes/walker/General Project Storage/Luke_Gregory/2023_Experiments/MethodsChapter/data/PIBDATA.csv") 
+      data <- read.csv("PIBDATA.csv") 
     # } else if (input$load_demo_twoBurst) {
     #   # Read uploaded file if one is provided
       # data <- read.csv("demoData_Two.csv")
