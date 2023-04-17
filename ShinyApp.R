@@ -3,10 +3,6 @@ library(shinythemes)
 require(dplyr)
 require(ggplot2)
 library(purrr)
-library(DT)
-library(shinyjs)
-# library(tidyverse)
-# install.packages("vctrs")
 
 source("User-Defined-Functions.R")
 
