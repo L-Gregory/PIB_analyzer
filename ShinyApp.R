@@ -91,10 +91,7 @@ server <- function(input, output, session) {
   data <- reactive({
     if (input$load_demo_oneBurst) {
       # Default data if check box load_demo is checked
-      data <- read.csv("PIBDATA.csv") 
-    # } else if (input$load_demo_twoBurst) {
-    #   # Read uploaded file if one is provided
-      # data <- read.csv("demoData_Two.csv")
+      data <- read.csv("demo_data.csv") 
     } else if (!is.null(input$file)) {
       # Read uploaded file if one is provided
       data <- read.csv(input$file$datapath)
