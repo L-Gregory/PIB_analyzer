@@ -31,14 +31,13 @@ git clone https://github.com/L-gregory/PIB_analyzer.git
 To run the app, open the app.R file in RStudio and click the **"Run App"** button in the top right corner of the script editor window. This will launch the app in a new window.
 
 ## Using the App
-### Upload Data tab
+### Upload Data Tab
 
 In the "Upload Data" tab, you can upload your CSV file and select the columns containing the time and net assimilation rate data. You can also view a table of the selected data and a plot of the original data.
 
 If you do not have your own data to upload, you can use the provided demo data by clicking on the "Load Demo Data" checkbox.
 
-### Fitting
-Fitting the PIB data
+### Fitting the Uploaded Data
 
 After checking for data quality, select the **"Fit"** button. If the fitting is successful, the plot will updated with the linear regression overtop of the steady state dark respiration, and a table of fit parameters will be displayed.
 
