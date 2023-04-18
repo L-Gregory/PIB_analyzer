@@ -27,8 +27,10 @@ To install the app, you can download the code from the GitHub repository (do the
 git clone https://github.com/L-gregory/PIB_analyzer.git
 ```
 
+If the script has run successfully, a new folder titled "PIB_analyzer" should be located in the desired directory
+
 ### Running the App
-To run the app, open the app.R file in RStudio and click the **"Run App"** button in the top right corner of the script editor window. This will launch the app in a new window.
+Open the folder and open the ShinyApp.R file in RStudio. Click the **"Run App"** button in the top right corner of the script editor window. This will launch the app in a new window.
 
 ## Using the App
 ### Upload Data Tab
