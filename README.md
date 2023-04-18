@@ -2,6 +2,8 @@
 
 This app is a web-based tool that allows researchers to analyze net CO2 assimilation rate acrossed a light-dark transient (i.e., post illumination burst; PIB). The app allows you to upload a CSV file, check data quality, and estimate five unique photosynthetic parameters from the PIB data. The app is built on the R programming language and the Shiny web framework.
 
+The app is hosted at https://l-gregory.shinyapps.io/pib_analyzer/ with 25 active hours per month.
+
 ## Getting Started
 
 ### Prerequisite
