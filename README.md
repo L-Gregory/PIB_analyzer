@@ -21,7 +21,7 @@ install.packages(c("shiny", "shinythemes", "dplyr", "ggplot2", "purrr"))
 ```
 
 ### Installation 
-To install the app, you can download the code from the GitHub repository:
+To install the app, you can download the code from the GitHub repository (do the following command in the terminal, after setting the desired directory):
 
 ```{r}
 git clone https://github.com/L-gregory/PIB_analyzer.git
