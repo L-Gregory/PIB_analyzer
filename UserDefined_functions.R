@@ -8,12 +8,15 @@ findMin <- function(x, y){
 }
 
 # ii. findA(): estimates assimilation at steady state in the light
-#           Steady state is arbitrary considered as the last 50 observations, but
+#           Steady state is arbitrary considered as the last 60 observations, but
 #           could be user controlled,
 findA <- function(x, y){
   data.frame(Time = x, A = y) %>%
-  filter(A > 0) %>% 
-  summarize(steady_Assimilation = mean(tail(A, 50), na.rm = TRUE))
+  dplyr::mutate(avg.A = stats::filter(A, rep(1/10, 10), sides = 2) %>% as.numeric(),
+                diffA = avg.A - lag(avg.A),
+                grab.A = abs(diffA) > 0.05) %>% 
+    dplyr::summarise(First.Index = min(which(grab.A == TRUE)),
+                     Mean.A = mean(A[First.Index-60]:A[First.Index], na.rm = T))
 }
 
 # iii. findRd(): estimates dark respiration at steady state in the dark.
@@ -93,7 +96,7 @@ plotPIB <- function(x, y, LAST) {
 # ii. 
 PIBEstimation_table <- function(x, y, LAST) {
   params <- data.frame(x, y) %>%
-  summarize(A = findA(x, y) %>% .$steady_Assimilation %>% as.numeric %>% round(2), 
+  summarize(A = findA(x, y) %>% .$Mean.A %>% as.numeric %>% round(2), 
             Rd = findRd(x, y, LAST) %>% .$steady_darkRespiration %>% as.numeric %>% round(3),
             Burst = length_amount_Burst(x, y, LAST) %>% .$PIB %>% as.numeric %>% round(1),
             Time = length_amount_Burst(x, y, LAST) %>% .$PIBlength_min %>% as.numeric %>% round(0),
