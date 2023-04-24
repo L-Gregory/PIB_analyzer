@@ -193,7 +193,10 @@ server <- function(input, output, session) {
       actionButton("copyFit", label = "Copy Fit") })
   })
   
-  observeEvent(input$copyFit, {write.table(PIB_table, "clipboard", sep = "\t", row.names = F)  })
+  observeEvent(input$copyFit, 
+               {clip <- pipe("pbcopy", "w")
+               write.table(PIB_table, file = clip, sep = "\t", row.names = F)
+               close(clip)})
 
   
 }
