@@ -4,7 +4,7 @@ require(dplyr)
 require(ggplot2)
 library(purrr)
 
-source("UserDefined_Functions.R")
+source("UserDefined_functions.R")
 
 ui <- fluidPage(
   #Add "flatly" theme from "shinythemes" package
